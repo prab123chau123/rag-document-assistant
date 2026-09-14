@@ -1,0 +1,30 @@
+server:
+  address: 127.0.0.1
+  port: 8080
+
+spring:
+  application:
+    name: rag-document-assistant
+
+  servlet:
+    multipart:
+      max-file-size: 5MB
+      max-request-size: 6MB
+
+rag:
+  ollama:
+    base-url: ${OLLAMA_BASE_URL:http://localhost:11434}
+    chat-model: llama3.2:3b
+    embedding-model: nomic-embed-text
+
+  database:
+    host: ${DB_HOST:127.0.0.1}
+    port: ${DB_PORT:5433}
+    name: ${DB_NAME:vectordb}
+    user: ${DB_USER:postgres}
+    password: ${DB_PASSWORD:postgres}
+    table: document_chunks_nomic
+
+  retrieval:
+    max-results: 4
+    min-score: 0.65
