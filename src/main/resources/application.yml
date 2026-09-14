@@ -18,11 +18,11 @@ rag:
     embedding-model: nomic-embed-text
 
   database:
-    host: ${DB_HOST:127.0.0.1}
-    port: ${DB_PORT:5433}
-    name: ${DB_NAME:vectordb}
-    user: ${DB_USER:postgres}
-    password: ${DB_PASSWORD:postgres}
+    host: ${DB_HOST}
+    port: ${DB_PORT}
+    name: ${DB_NAME}
+    user: ${DB_USER}
+    password: ${DB_PASSWORD}
     table: document_chunks_nomic
 
   retrieval:
